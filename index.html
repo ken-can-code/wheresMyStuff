@@ -5,7 +5,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" type="text/css" href="styles.css">
-   <script src="index.js"></script>
+   <script src="index.js" defer></script>
    <title>Where's my stuff?</title>
 </head>
 <body>
@@ -27,8 +27,9 @@
          <option value="yes">Yes</option> <!-- Will add extra sub select option w/ Javascript-->
          <option value="no">No</option>
       </select><br><br>
-      <button type="submit" id="submit" value="Submit">
+      <input type="submit" id="submit" value="Submit">
+      <!-- <button type="submit" id="submit" value="Submit"> -->
    </form>
-   <div id="list-section"></div>
+   <div id="list-div"></div>
 </body>
 </html>

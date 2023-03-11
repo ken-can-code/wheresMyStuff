@@ -1,32 +1,28 @@
 const submitBtn = document.getElementById('submit');
-const listSection = document.getElementById('list-section');
+console.log('submitBtn', submitBtn);
+const listDiv = document.getElementById('list-div');
 const itemList = document.createElement('ul'); // creates unordered list (not yet appended)
 itemList.setAttribute('id', 'user-item-list');
+let idNum = 0;
 
 function handleSubmit(event) { // when submit button is clicked (Mario assumes)
    event.preventDefault(event); // prevent app from reloading
    const eachItem = document.createElement('li');
-   eachItem.setAttribute('id', 'each-item');
+   eachItem.setAttribute('id', `each-item${idNum}`);
+   idNum += 1;
    
-   if (listDoesntExist) { //
-      // add item to the existing list
-      listSection.appendChild(itemList); // makes the list (<ul>) (happens once)
-      
-   } else {
-      // list created here
-      // append to the dom
-      // and add item
+   if (listDoesntExist) { // runs only once
+      listDiv.appendChild(itemList); // makes the list (<ul>) (happens once)
    }
-   listSection.appendChild(eachItem); // appends each item
-   itemList.appendChild('each-item');
+   itemList.appendChild(eachItem);
 }
 
-submitBtn.addEventListener('click', handleSumbit);
-// itemList.id = 'user-items'; // Mario says: would this work?
+submitBtn.addEventListener('click', handleSubmit);
+
 // console.log('itemList', itemList);
 
 /*
-  <div id='listsection'>
+  <div id='listDiv'>
     <ul id='user-item-list'>
       <li> appended item after clicking submit </li>
     </ul>
